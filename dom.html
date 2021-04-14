@@ -1,0 +1,70 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Dom</title>
+    <script>
+        const TARGET_CANVAS_ID = "Canvas"
+        /**
+         * @returns {CanvasRenderingContext2D}
+         */
+        function getCanvas(canvasId) {
+            return document.getElementById(canvasId).getContext("2d");
+        }
+        function draw_box(targetCanvasId) {
+            // const ctx = document.getElementById(targetCanvasId).getContext("2d");
+            const ctx = getCanvas(targetCanvasId)
+            ctx.fillStyle = "rgb(255, 0, 0)";
+            ctx.fillRect(0, 0, 500, 500);
+            is_drawn = true;
+        }
+
+        function button_func() {
+            draw_box();
+            console.log(is_drawn);
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <div>
+            <p>ボタンを押すと赤くなる</p>
+        </div>
+
+        <div>
+            <input type="button" value="button" onclick="draw_box(TARGET_CANVAS_ID)">
+        </div>
+
+        <div>
+            <canvas id="Canvas" width="500" height="500"></canvas>
+            <script>
+                let is_drawn = false;
+                const ctx = document.getElementById("Canvas").getContext("2d");
+                ctx.fillStyle = "rgb(0,255,0)";
+                ctx.fillRect(0, 0, 500, 500);
+            </script>
+        </div>
+    </div>
+    <div>
+        <script>
+            const aclick = (targetId) => {
+                console.debug('clicked')
+                const doc = document.getElementById(targetId)
+                if (!doc) return
+                doc.style.backgroundColor = 'red'
+            }
+        </script>
+        <input type="button" value="button" onclick="aclick('aaa')" />
+        <div id="aaa"></div>
+        <style>
+            #aaa {
+                width: 800px;
+                height: 800px;
+                background-color: aqua;
+            }
+        </style>
+    </div>
+</body>
+
+</html>
