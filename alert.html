@@ -1,0 +1,21 @@
+<!Doctype html>
+<html>
+    <head>
+        <link href="alert_style.css" rel="stylesheet" type="text/css">
+        <title>Alert</title>
+        <script>
+            const TARGET_BUTTON_ID = "button1"
+            let clickCount = 0;
+            function button_func(){
+                clickCount++;
+                alert("click count: " + clickCount);
+            }
+        </script>            
+
+    </head>
+    <body>
+        <div class="Button">
+            <input id="button1" type="button" value="button" onclick="button_func()">
+        </div>
+    </body>
+</html>
