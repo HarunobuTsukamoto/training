@@ -1,0 +1,31 @@
+<!Doctype html>
+<html>
+    <head>
+        <link href="list_style.css" rel="stylesheet" type="text/css">
+        <title>List</title>
+        <script>
+            const TEXT_BOX_ID = "inputTextBox";
+            const OUTPUT_TEXT_ID = "outputText"
+            function button_func(){
+                const textbox = document.getElementById(TEXT_BOX_ID);
+                const value = textbox.value;
+                console.log(value);
+                document.getElementById(OUTPUT_TEXT_ID).value += "inputText: " + value + "\n";
+                textbox.value = "";
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <textarea id="outputText"></textarea>
+        </div>
+        <div id="userArea">
+            <div>
+                <input id="inputTextBox" type="text">
+            </div>
+            <div>
+                <input id="Button" type="button" value="input!" onclick="button_func()">
+            </div>
+        </div>
+    </body>
+</html>

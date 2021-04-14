@@ -1,0 +1,21 @@
+#inputTextBox{
+    position: fixed;
+    height: 10vh;
+    width: 80vw;
+    bottom: 0;
+    left: 0;
+}
+
+#Button{
+    position: absolute;
+    height: 10vh;
+    width: 15vw;
+    bottom: 0;
+    right: 0;
+}
+
+#outputText{
+    position: absolute;
+    height: 80vh;
+    width: 80vw;
+}
